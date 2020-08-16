@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    {{form}}
+    <button type="submit">Calculate</button>
+    {%if messages %}
+    <ul class="messagelist">
+    {% for message in messages %}
+        {{ message }}
+    {% endfor %}
+        </ul>
+    {% endif %}
+</form>
+</body>
+</html>
